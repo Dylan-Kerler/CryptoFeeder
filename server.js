@@ -15,10 +15,12 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 const path = require("path");
-const port = 3000;
+const PORT = 8080;
+http.listen(PORT, () => console.log("Server listening on port ", PORT));
 
-const PORT = 3000;
-http.listen(PORT, () => console.log("Server listening on port ", port));
+// dev
+const cors = require('cors');
+app.use(cors());
 
 app.get("/", (req, res) => {
     // noinspection JSUnresolvedVariable

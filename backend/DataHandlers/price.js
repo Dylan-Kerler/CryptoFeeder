@@ -56,7 +56,7 @@ const checkPriceSeconds = (coin, mostRecentTrade) => {
 };
 
 const convertCacheToSecond = (series) => {
-    const range = { high: 0, low: 0 };
+    const range = { high: 0, low: 0, timestamp: Date.now() };
     for (trade of series) {
         const price = parseFloat(trade.price);
         if (price > range.high) {
@@ -86,8 +86,8 @@ const isAnomalyPriceRange = (series, limit) => {
         const positiveRange = high - series[i].low;
         const negativeRange = series[i].high - low;
 
-        if (positiveRange > limit ) { return { positiveRange } }
-        else if (negativeRange > limit ) { return { negativeRange } }
+        if (positiveRange > limit ) { return { positiveRange, limitTimestamp: series[i].timestamp } }
+        else if (negativeRange > limit ) { return { negativeRange, limitTimestamp: series[i].timestamp } }
     }
     return false;
 };
