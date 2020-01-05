@@ -4,8 +4,8 @@ const { recentEventCache, anomalyEmitter } = require("./backend/dataStore");
 
 getPairs("BTC").then(async ({pairs, basePair}) => {
     await initialisePreviousCandles(200, "1h", pairs, "BTC");
-    subscribeToCandles(basePair, pairs, "1h", handleNewCandle);
     subscribeToAggTrades(basePair, pairs, updateSecondData);
+    subscribeToCandles(basePair, pairs, "1h", handleNewCandle);
     subscribeToOrderBooks(basePair, pairs, handleOrderBook);
 });
 

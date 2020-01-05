@@ -24,7 +24,7 @@ const checkPriceSeconds = (coin, mostRecentTrade) => {
     coinPrices[coin].seconds.push(second);
 
     const maRange = coinPrices[coin].hourlyMa200;
-    const anomalyRange = isAnomalyPriceRange(coinPrices[coin].seconds, maRange * 0); // returns the range size
+    const anomalyRange = isAnomalyPriceRange(coinPrices[coin].seconds, maRange); // returns the range size
 
     const maClose = coinPrices[coin].maClose;
     const anomalyMaCross = isAnomalyMaCross(coinPrices[coin].seconds, maClose);
@@ -86,11 +86,27 @@ const isAnomalyPriceRange = (series, limit) => {
         const positiveRange = high - series[i].low;
         const negativeRange = series[i].high - low;
 
-        if (positiveRange > limit ) { return { positiveRange, limitTimestamp: series[i].timestamp } }
-        else if (negativeRange > limit ) { return { negativeRange, limitTimestamp: series[i].timestamp } }
+        if (positiveRange > limit) {
+            return {
+                positive: true,
+                change: positiveRange / series[i].high,
+                range: positiveRange,
+                limitTimestamp: series[i].timestamp
+            }
+        }
+
+        else if (negativeRange > limit ) {
+            return {
+                positive: false,
+                change: negativeRange / series[i].high,
+                range: negativeRange,
+                limitTimestamp: series[i].timestamp
+            }
+        }
     }
+
     return false;
-};
+}
 
 const indexes = {};
 const handlePriceCandle = (candle, coin) => {

@@ -13,12 +13,13 @@ const {handlePriceCandle} = require("./DataHandlers/price");
 
 const subscribeToCandles = (basePair = "BTC", pairs, interval, callback) => {
     client.ws.candles(pairs, interval, candle => {
+        console.log(candle);
         callback(candle, basePair);
     });
 };
 
 const subscribeToAggTrades = (basePair = "BTC", pairs = [], callback) => {
-    client.ws.aggTrades("ETHBTC", trade => {
+    client.ws.aggTrades(pairs, trade => {
         // check if the trade is anomalous (volume or price wise)
         const anomalies = callback(trade, basePair);
         anomalies.forEach(anomalyHandler);

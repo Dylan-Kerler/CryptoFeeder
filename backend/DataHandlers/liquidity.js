@@ -44,30 +44,27 @@ const { calcMa } = require("../utils");
     }
  */
 
-/// TODO: all of these functions need testing
-
 const handleBookUpdate = (orderBook, coin) => {
     const now = new Date().getTime();
     const thisCoinOrders = coinOrders[coin];
     const anomalies = [];
-    if (coin === "ETH") {
-        if (now - thisCoinOrders.lastCacheAdd > 60 /* seconds */ * 1000 /* milliseconds */) {
-            const orderBookState = calcTotalBuySellSide(orderBook);
-            pushOrderBookStateToCache(orderBookState, now, coin);
-            if (coinOrders[coin].orderBookCache60min.length >= 60 /* minutes */) {
-                coinOrders[coin].orderBookStates200.push(orderBookState);
-                if (coinOrders[coin].orderBookStates200.length > 200) {
-                    coinOrders[coin].orderBookStates200.splice(0, coinOrders[coin].orderBookStates200.length - 200)
-                }
-                coinOrders[coin].orderBookCache60min = [];
+    if (now - thisCoinOrders.lastCacheAdd > 60 /* seconds */ * 1000 /* milliseconds */) {
+        console.log(orderBook);
+        const orderBookState = calcTotalBuySellSide(orderBook);
+        pushOrderBookStateToCache(orderBookState, now, coin);
+        if (coinOrders[coin].orderBookCache60min.length >= 60 /* minutes */) {
+            coinOrders[coin].orderBookStates200.push(orderBookState);
+            if (coinOrders[coin].orderBookStates200.length > 200) {
+                coinOrders[coin].orderBookStates200.splice(0, coinOrders[coin].orderBookStates200.length - 200)
             }
+            coinOrders[coin].orderBookCache60min = [];
+        }
 
-            if (now - coinOrders[coin].lastUpdate > 60 /* seconds */ * 1000 /* milliseconds */) {
-                const ma = calcBuySellMa(coinOrders[coin].orderBookStates200);
-                anomalies.push(...isOrderBookAnomaly(ma, orderBookState, 0, coin));
-                if (anomalies.length > 0) {
-                    coinOrders[coin].lastUpdate = now;
-                }
+        if (now - coinOrders[coin].lastUpdate > 60 /* seconds */ * 1000 /* milliseconds */) {
+            const ma = calcBuySellMa(coinOrders[coin].orderBookStates200);
+            anomalies.push(...isOrderBookAnomaly(ma, orderBookState, 1, coin));
+            if (anomalies.length > 0) {
+                coinOrders[coin].lastUpdate = now;
             }
         }
     }
@@ -76,19 +73,20 @@ const handleBookUpdate = (orderBook, coin) => {
 
 const isOrderBookAnomaly = (ma, mostRecentState, multiplier, coin) => {
     const anomalies = [];
-    const now = new Date().getTime();
+    const now = Math.floor(new Date().getTime() / 1000);
     if (mostRecentState.buySide > ma.buySide * multiplier) {
         anomalies.push({
             type: "OrderBookIncrease",
             group: "liquidity",
             isAnomaly: true,
             coin,
+            exchange: "Binance",
             data: {
                 isBuySide: true,
-                buySide: mostRecentState.buySide,
-                maBuySide: ma.buySide,
+                total: mostRecentState.buySide,
+                maTotal: ma.buySide,
+                timestamp: now,
             },
-            timestamp: now
         });
     }
 
@@ -98,12 +96,13 @@ const isOrderBookAnomaly = (ma, mostRecentState, multiplier, coin) => {
             group: "liquidity",
             isAnomaly: true,
             coin,
+            exchange: "Binance",
             data: {
                 isBuySide: false,
-                buySide: mostRecentState.sellSide,
-                maBuySide: ma.sellSide,
-            },
-            timestamp: now
+                total: mostRecentState.sellSide,
+                maTotal: ma.sellSide,
+                timestamp: now,
+            }
         });
     }
 

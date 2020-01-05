@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/DataHandlers/liquidity.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/liquidity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DataHandlers/price.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/price.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/DataHandlers/volume.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/volume.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/subcriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/subcriptions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,11 +46,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/dev/src/ReactComponents" />
       <recent name="$PROJECT_DIR$/frontend/tmp/public" />
       <recent name="$PROJECT_DIR$/frontend/tmp/src/css" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend/DataHandlers" />
-      <recent name="$PROJECT_DIR$/backend" />
     </key>
   </component>
   <component name="RunManager">
@@ -96,7 +96,9 @@
       <workItem from="1577786902119" duration="13059000" />
       <workItem from="1577911744787" duration="7550000" />
       <workItem from="1578046490482" duration="8005000" />
-      <workItem from="1578175221680" duration="6932000" />
+      <workItem from="1578175221680" duration="7108000" />
+      <workItem from="1578219435650" duration="7097000" />
+      <workItem from="1578260524584" duration="4441000" />
     </task>
     <servers />
   </component>

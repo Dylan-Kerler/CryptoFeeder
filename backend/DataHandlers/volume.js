@@ -25,7 +25,8 @@ const checkVolumeSeconds = (coin, mostRecentTrade) => {
     };
 
     pushVolumeSecond(second, coin);
-    const { isBuyVolume, isSellVolume } = isAnomalyVolume(coin, 0);
+    const MULTIPLIER = 2;
+    const { isBuyVolume, isSellVolume } = isAnomalyVolume(coin, MULTIPLIER);
     if ((isBuyVolume || isSellVolume)
             && timeNow - coinVolumes[coin].lastUpdate > 60 /* seconds */) {
         coinVolumes[coin].lastUpdate = timeNow;
@@ -34,8 +35,9 @@ const checkVolumeSeconds = (coin, mostRecentTrade) => {
             group: "volume",
             isAnomaly: true,
             coin,
+            exchange: "Binance",
             data: {
-                ...calcSmallestTimeFrameToSatisfyLimitVolume(coinVolumes[coin].seconds, coin, 0, isBuyVolume),
+                ...calcSmallestTimeFrameToSatisfyLimitVolume(coinVolumes[coin].seconds, coin, MULTIPLIER, isBuyVolume),
                 hourlyMa200: coinVolumes[coin].hourlyMa200
             }
         });
@@ -48,8 +50,8 @@ const tallyVolumeCache = (series) => {
     const [BUY, SELL] = [false, true]; // {maker: false} implies a market buy (the maker was the seller)
     const second = {buyVolume: 0, sellVolume: 0};
     for (const tmpTrade of series) {
-        tmpTrade.maker === BUY ? second.buyVolume += parseFloat(tmpTrade.quantity)
-            : second.sellVolume += parseFloat(tmpTrade.quantity);
+        tmpTrade.maker === BUY ? second.buyVolume += parseFloat(tmpTrade.quantity) * parseFloat(tmpTrade.price)
+            : second.sellVolume += parseFloat(tmpTrade.quantity) * parseFloat(tmpTrade.price);
     }
     return second;
 };
@@ -83,7 +85,7 @@ const calcSmallestTimeFrameToSatisfyLimitVolume = (series, coin, multiplier, isB
     for (let i = series.length - 1; i >= 0; i--) {
         total += isBuyVolume ? series[i].buyVolume : series[i].sellVolume;
         if (total >=  coinVolumes[coin].hourlyMa200 * multiplier) {
-            return { total, timestamp: series[i].second, isBuyVolume };
+            return { total, timestamp: Math.floor(Date.now() / 1000), limitTimestamp: series[i].second * 1000, isBuyVolume };
         }
     }
 
