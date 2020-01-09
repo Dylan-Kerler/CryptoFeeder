@@ -18,17 +18,17 @@ const { calcMa } = require("../utils");
 
 const checkVolumeSeconds = (coin, mostRecentTrade) => {
     const volumeAnomalies = [];
-    const timeNow = Math.floor(mostRecentTrade.eventTime / 1000);
+    const timeNow = Math.floor(Date.now() / 1000);
     const second = {
         ...tallyVolumeCache(coinSecondCache[coin].secondCache),
         second: timeNow
     };
 
     pushVolumeSecond(second, coin);
-    const MULTIPLIER = 2;
+    const MULTIPLIER = 1;
     const { isBuyVolume, isSellVolume } = isAnomalyVolume(coin, MULTIPLIER);
     if ((isBuyVolume || isSellVolume)
-            && timeNow - coinVolumes[coin].lastUpdate > 60 /* seconds */) {
+            && timeNow - coinVolumes[coin].lastUpdate > 60 /* seconds */ * 15 /* minutes */) {
         coinVolumes[coin].lastUpdate = timeNow;
         volumeAnomalies.push({
             type: "volumeAnomaly",

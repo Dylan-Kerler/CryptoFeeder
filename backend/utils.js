@@ -14,7 +14,7 @@ const isNewSecond = (mostRecentTrade, coin) => {
     const coinSecondCacheInfo = coinSecondCache[coin];
     if (coinSecondCacheInfo.secondCache.length <= 0) { return false; } // If the second cache has not yet been initialised
 
-    const currSecond = Math.floor(mostRecentTrade.eventTime / 1000);
+    const currSecond = Math.floor(Date.now() / 1000);
     const lastTradeInCache = coinSecondCacheInfo.secondCache[coinSecondCacheInfo.secondCache.length - 1];
     const lastCachedSecondTime = Math.floor(lastTradeInCache.eventTime / 1000);
 

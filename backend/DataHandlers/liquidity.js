@@ -49,7 +49,6 @@ const handleBookUpdate = (orderBook, coin) => {
     const thisCoinOrders = coinOrders[coin];
     const anomalies = [];
     if (now - thisCoinOrders.lastCacheAdd > 60 /* seconds */ * 1000 /* milliseconds */) {
-        console.log(orderBook);
         const orderBookState = calcTotalBuySellSide(orderBook);
         pushOrderBookStateToCache(orderBookState, now, coin);
         if (coinOrders[coin].orderBookCache60min.length >= 60 /* minutes */) {

@@ -29,7 +29,7 @@ const checkPriceSeconds = (coin, mostRecentTrade) => {
     const maClose = coinPrices[coin].maClose;
     const anomalyMaCross = isAnomalyMaCross(coinPrices[coin].seconds, maClose);
 
-    const recentTradeTime = Math.floor(mostRecentTrade.eventTime / 1000);
+    const recentTradeTime = Math.floor(Date.now() / 1000);
     if (anomalyMaCross && recentTradeTime - coinPrices[coin].lastUpdate > 60) {
         coinPrices[coin].lastUpdate = recentTradeTime;
         anomalyArray.push({
@@ -85,8 +85,8 @@ const isAnomalyPriceRange = (series, limit) => {
     for (let i = series.length - 1; i >= 0; i--) {
         const positiveRange = high - series[i].low;
         const negativeRange = series[i].high - low;
-
-        if (positiveRange > limit) {
+        const ONE_SATOSHI = 0.00000001;
+        if (positiveRange > limit && positiveRange > ONE_SATOSHI * 5) {
             return {
                 positive: true,
                 change: positiveRange / series[i].high,
@@ -95,7 +95,7 @@ const isAnomalyPriceRange = (series, limit) => {
             }
         }
 
-        else if (negativeRange > limit ) {
+        else if (negativeRange > limit && negativeRange > ONE_SATOSHI * 5) {
             return {
                 positive: false,
                 change: negativeRange / series[i].high,

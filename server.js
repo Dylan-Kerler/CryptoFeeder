@@ -4,9 +4,9 @@ const { recentEventCache, anomalyEmitter } = require("./backend/dataStore");
 
 getPairs("BTC").then(async ({pairs, basePair}) => {
     await initialisePreviousCandles(200, "1h", pairs, "BTC");
+    subscribeToOrderBooks(basePair, pairs, handleOrderBook);
     subscribeToAggTrades(basePair, pairs, updateSecondData);
     subscribeToCandles(basePair, pairs, "1h", handleNewCandle);
-    subscribeToOrderBooks(basePair, pairs, handleOrderBook);
 });
 
 const express = require("express");
@@ -60,8 +60,17 @@ app.get("/api/big_cache", (req, res) => {
 });
 
 /// Websockets
+const Binance = require("binance-api-node").default;
+let lastUpdate = Date.now();
+Binance().ws.trades('BTCUSDT', trade => {
+    if (Date.now() - lastUpdate > 1000) { //update every 1 second
+        io.emit("NEW_BTC_PRICE", trade.price);
+        lastUpdate = Date.now();
+    }
+});
+
 io.on('connection', function(socket) {
-    console.log('a user connected');
+    console.log("A user connected")
 });
 
 anomalyEmitter.on("NEW_ANOMALY", data => {

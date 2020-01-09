@@ -56,6 +56,7 @@ const getPairs = async (basePair = "BTC") => {
     const pairs = [];
     for (const pair of symbols) {
         if (pair.quoteAsset === basePair) {
+            console.log(pair.baseAsset);
             pairs.push(pair.symbol);
 
             // Initialise the dataStores
@@ -98,7 +99,6 @@ const getPairs = async (basePair = "BTC") => {
 const initialisePreviousCandles = async (limit, interval, pairs, basePair) => {
     // Run each request in parallel then wait on each promise in the array to resolve
     // Promise.all([promise1, promise2, promise3, ...])
-
     console.log(`Fetching previous candles for ${pairs.length} pairs...`);
     await Promise.all(pairs.map(async pair => {
         const candles = await client.candles({ symbol: pair, interval, limit });
@@ -109,7 +109,7 @@ const initialisePreviousCandles = async (limit, interval, pairs, basePair) => {
                 coinPrices[coin].dailyMa50Cache.push(parseFloat(candle.close))
             }
 
-            const volume = parseFloat(candle.volume);
+            const volume = parseFloat(candle.volume) * parseFloat(candle.close);
             coinVolumes[coin].hourly200Cache.push(volume);
 
             const range = Math.abs(parseFloat(candle.high) - parseFloat(candle.low));

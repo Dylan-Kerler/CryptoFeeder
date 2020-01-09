@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/levi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DataHandlers/liquidity.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/liquidity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DataHandlers/price.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/price.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/DataHandlers/volume.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/DataHandlers/volume.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/subcriptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/subcriptions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -46,11 +49,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/dev/src/ReactComponents/config" />
       <recent name="$PROJECT_DIR$/frontend/dev/src/ReactComponents" />
       <recent name="$PROJECT_DIR$/frontend/tmp/public" />
       <recent name="$PROJECT_DIR$/frontend/tmp/src/css" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/backend/DataHandlers" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,7 +101,13 @@
       <workItem from="1578046490482" duration="8005000" />
       <workItem from="1578175221680" duration="7108000" />
       <workItem from="1578219435650" duration="7097000" />
-      <workItem from="1578260524584" duration="4441000" />
+      <workItem from="1578260524584" duration="4751000" />
+      <workItem from="1578302961100" duration="4611000" />
+      <workItem from="1578393493361" duration="225000" />
+      <workItem from="1578393740543" duration="1797000" />
+      <workItem from="1578428776215" duration="7747000" />
+      <workItem from="1578480654747" duration="15418000" />
+      <workItem from="1578563698686" duration="1052000" />
     </task>
     <servers />
   </component>
@@ -151,10 +160,10 @@
     </state>
     <state x="347" y="174" key="run.anything.popup/0.27.1366.741@0.27.1366.741" timestamp="1576856304661" />
     <state x="874" y="307" key="run.anything.popup/0.27.3440.1413@0.27.3440.1413" timestamp="1577791117705" />
-    <state x="871" y="145" width="1693" height="1293" key="search.everywhere.popup" timestamp="1578093311689">
+    <state x="871" y="145" width="1693" height="1293" key="search.everywhere.popup" timestamp="1578429943866">
       <screen x="0" y="27" width="3440" height="1413" />
     </state>
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1576846209936" />
-    <state x="871" y="145" width="1693" height="1293" key="search.everywhere.popup/0.27.3440.1413@0.27.3440.1413" timestamp="1578093311689" />
+    <state x="871" y="145" width="1693" height="1293" key="search.everywhere.popup/0.27.3440.1413@0.27.3440.1413" timestamp="1578429943866" />
   </component>
 </project>
