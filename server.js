@@ -15,7 +15,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 const path = require("path");
-const PORT = 8080;
+const PORT = process.env.PORT ? process.env.PORT : 3000 ;
 http.listen(PORT, () => console.log("Server listening on port ", PORT));
 
 // dev
