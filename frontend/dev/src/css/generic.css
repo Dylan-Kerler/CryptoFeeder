@@ -1,0 +1,40 @@
+.button_primary {
+    font-family: arial, sans-serif;
+    font-weight: 900;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 25px;
+    width: auto;
+    color: white;
+}
+
+.button_primary:hover {
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    margin: auto;
+    height: 10px;
+    width: 200px;
+    overflow: hidden;
+    z-index: 0;
+    border-radius: 20px;
+    border: 1px solid #D7D7D7;
+}
+
+::-webkit-slider-runnable-track {
+    background: white;
+}
+
+::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px; /* 1 */
+        height: 10px;
+        border-radius: 20px;
+        border: none;
+        background: red;
+        box-shadow: -100vw -8vw 0 100vw black;
+        z-index: 3;
+}

@@ -1,0 +1,18 @@
+#header_div {
+    background-color: #01457d;
+    padding: 15px 50px;
+}
+
+#login_signup_button_div {
+    float: right;
+    display: inline-block;
+    margin-top: 2px;
+}
+
+#title_text_div {
+    text-align: center;
+    margin-top: 2px;
+    padding: 0;
+    color: white;
+    display: inline-block;
+}

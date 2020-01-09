@@ -1,0 +1,94 @@
+#data_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 40px;
+    text-align: center;
+    padding: 30px 30px;
+    overflow: hidden;
+}
+
+#data_div > div {
+    padding: 25px 15px 0 15px;
+    border-radius: 15px;
+    background: #F2F2F2;
+    overflow: hidden;
+}
+
+#data_div > div > h1 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: left;
+    margin-top: -40px;
+    position: absolute;
+}
+
+#volume_data_div > h1 {
+    color: #2B4CA9;
+}
+
+#data_div > div > div {
+    height: 100%;
+    overflow: scroll;
+}
+
+#price_data_div > h1 {
+    color: #9510B5;
+}
+
+#liquidity_data_div > h1 {
+    color: #23B510;
+}
+
+@keyframes enter_buy_data {
+    from {background: #23B510}
+}
+
+@keyframes enter_sell_data {
+    from {background: red}
+}
+
+.enter_sell_data {
+    animation: enter_sell_data 1s;
+}
+
+.enter_buy_data {
+    animation: enter_buy_data 1s;
+}
+
+.data_box {
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 9px;
+    text-align: left;
+    color: #EDEDED;
+    margin-bottom: 10px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.data_box:hover {
+    color: white;
+    font-weight: bolder;
+}
+
+.data_box:hover .data_timestamp {
+    color: white;
+}
+
+.volume_box {
+    background: #2B4CA9;
+}
+
+.price_box {
+    background: #9510B5;
+}
+
+.liquidity_box {
+    background: #23B510;
+}
+
+.data_timestamp {
+    text-align: right;
+    font-weight: 100;
+    margin-top: 10px;
+    color: lightgray;
+}

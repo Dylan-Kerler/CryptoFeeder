@@ -1,0 +1,68 @@
+#top_bar_div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "search     text    settings"
+    ;
+
+    column-gap: 150px;
+    padding: 20px 40px;
+    min-height: 0;
+    min-width: 0;
+    text-align: center;
+    background-color: white;
+}
+
+#search_for_coin_input {
+    grid-area: search;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #D8D8D8;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+#search_for_coin_input:focus {
+    border-color: #01457d;
+    outline: none;
+}
+
+#top_bar_text {
+    grid-area: text;
+    color: #595252;
+}
+
+#settings_button {
+    grid-area: settings;
+    color: white;
+    background-color: #921A9E;
+}
+
+.search_prediction {
+    border-bottom: 1px solid #D8D8D8;
+    padding: 15px;
+    font-size: 14px;
+}
+
+@keyframes background_for_search {
+    from {background-color: white}
+    to {background-color: #D8D8D8}
+}
+
+.search_prediction:hover {
+    animation: background_for_search 0.3s;
+    background-color: #D8D8D8;
+    cursor: pointer;
+}
+
+
+@keyframes mouse_out_prediction_animation {
+    from {background-color: #D8D8D8}
+    to {background-color: white}
+}
+
+.prediction_mouse_out {
+    animation: mouse_out_prediction_animation 0.3s;
+}
