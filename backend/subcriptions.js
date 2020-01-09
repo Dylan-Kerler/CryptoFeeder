@@ -13,7 +13,6 @@ const {handlePriceCandle} = require("./DataHandlers/price");
 
 const subscribeToCandles = (basePair = "BTC", pairs, interval, callback) => {
     client.ws.candles(pairs, interval, candle => {
-        console.log(candle);
         callback(candle, basePair);
     });
 };
