@@ -59,7 +59,7 @@ const handleBookUpdate = (orderBook, coin) => {
             coinOrders[coin].orderBookCache60min = [];
         }
 
-        if (now - coinOrders[coin].lastUpdate > 60 /* seconds */ * 1000 /* milliseconds */) {
+        if (now - coinOrders[coin].lastUpdate > 60 /* seconds */ * 1000 /* milliseconds */ * 10 /* minutes */) {
             const ma = calcBuySellMa(coinOrders[coin].orderBookStates200);
             anomalies.push(...isOrderBookAnomaly(ma, orderBookState, 1, coin));
             if (anomalies.length > 0) {
@@ -137,11 +137,11 @@ const calcBuySellMa = orderBookStates => {
 const calcTotalBuySellSide = orderBook => {
     const total = {buySide: 0, sellSide: 0};
     for (const bid of orderBook.bids) {
-        total.buySide += parseFloat(bid.quantity);
+        total.buySide += parseFloat(bid.quantity) * parseFloat(bid.price);
     }
 
     for (const ask of orderBook.asks) {
-        total.sellSide += parseFloat(ask.quantity);
+        total.sellSide += parseFloat(ask.quantity) * parseFloat(ask.price);
     }
 
     return total;

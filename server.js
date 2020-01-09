@@ -22,30 +22,29 @@ http.listen(PORT, () => console.log("Server listening on port ", PORT));
 const cors = require('cors');
 app.use(cors());
 
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
 app.get("/", (req, res) => {
     // noinspection JSUnresolvedVariable
-    res.sendFile(path.join(__dirname, "/frontend/index.html"));
+    res.sendFile(path.join(__dirname, "/frontend/build/index.html"));
 });
-
 const spliceEventCache = (limit = 30, size = "LITTLE") => {
     /// Do a deep copy here (Object.assign and "..." spread operator only shallow copy)
     const sizedEventCache = JSON.parse(JSON.stringify(recentEventCache));
     Object.keys(sizedEventCache).forEach(key => {
         if (key !== "limit") {
             const length = sizedEventCache[key].length;
-            // Only serve the 30 most recent elements for each anomaly type group
             if (length > limit) {
                 size === "LITTLE"   ? sizedEventCache[key].splice(0, length - limit)
                 : size === "BIG"    ? sizedEventCache[key].splice(length - limit, length)
                 : process.exit(`Invalid 'size' type, expected 'LITTLE' or 'BIG', instead got: ${size}`);
             }
         }
+
     });
-
     return sizedEventCache;
-};
 
-app.use(express.static(path.join(__dirname, "frontend")));
+};
 
 /// Send the small cache first for better performance
 app.get("/api/little_cache", (req, res) => {
