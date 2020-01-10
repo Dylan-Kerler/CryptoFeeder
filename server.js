@@ -28,7 +28,8 @@ app.get("/", (req, res) => {
     // noinspection JSUnresolvedVariable
     res.sendFile(path.join(__dirname, "/frontend/build/index.html"));
 });
-const spliceEventCache = (limit = 30, size = "LITTLE") => {
+
+const spliceEventCache = (limit = 60, size = "LITTLE") => {
     /// Do a deep copy here (Object.assign and "..." spread operator only shallow copy)
     const sizedEventCache = JSON.parse(JSON.stringify(recentEventCache));
     Object.keys(sizedEventCache).forEach(key => {
@@ -43,18 +44,17 @@ const spliceEventCache = (limit = 30, size = "LITTLE") => {
 
     });
     return sizedEventCache;
-
 };
 
 /// Send the small cache first for better performance
 app.get("/api/little_cache", (req, res) => {
-    const littleEventCache = spliceEventCache(30, "LITTLE");
+    const littleEventCache = spliceEventCache(60, "LITTLE");
     res.json(littleEventCache);
 });
 
 /// Then send the bigger cache after the smaller cache
 app.get("/api/big_cache", (req, res) => {
-    const bigEventCache = spliceEventCache(30, "BIG");
+    const bigEventCache = spliceEventCache(60, "BIG");
     res.json(bigEventCache);
 });
 

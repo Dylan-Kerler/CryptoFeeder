@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/Store/URL.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/precache-manifest.3b149a4c6bb22c21a37fe2524823a90b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/precache-manifest.89dc15d4575b046080a4425b98529a96.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.61869d07.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.61869d07.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/DataDisplay/DataDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/DataDisplay/DataDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/Socket.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/Socket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.7fcd55c8.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.7fcd55c8.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/Sliders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/Sliders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
       <workItem from="1578428776215" duration="7747000" />
       <workItem from="1578480654747" duration="15418000" />
       <workItem from="1578563698686" duration="6271000" />
-      <workItem from="1578681634838" duration="681000" />
+      <workItem from="1578681634838" duration="4996000" />
     </task>
     <servers />
   </component>
