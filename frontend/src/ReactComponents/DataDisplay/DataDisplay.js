@@ -4,6 +4,7 @@ import settingsStore from "../Store/Settings";
 import priceStore from "../Store/Price";
 import {AnomaliesContext, TimeContext, SettingsContext, PriceContext} from "./Contexts";
 import ParsedText from "./ParsedText";
+import URL from "../Store/URL";
 
 const anomaliesReducer = (state, action) => {
     state[action.type].push(...action.data);
@@ -33,7 +34,7 @@ const DataDisplay = () => {
     // Initialise the anomalies
     useEffect(() => {
         //Hit the cache api and set the initial state
-        fetch("http://localhost:8080/api/little_cache").then(res => res.json().then(recentEventCache => {
+        fetch(`${URL}/api/little_cache`).then(res => res.json().then(recentEventCache => {
             Object.keys(recentEventCache).forEach(key => {
                 if (dataTypes.includes(key)) {
                     dispatchAnomalies({type: key, data: recentEventCache[key]});

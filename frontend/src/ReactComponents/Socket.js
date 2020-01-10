@@ -1,4 +1,5 @@
 import io from "socket.io-client";
+import URL from "./Store/URL";
 
-const socket = io("localhost:8080");
+const socket = io(URL);
 export default socket;
