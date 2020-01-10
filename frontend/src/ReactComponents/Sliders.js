@@ -42,9 +42,9 @@ const Sliders = () => {
     return (
         <React.Fragment>
             <Slider dataType={"volume"} setttingsType={settingsActions.UPDATE_MIN_VOLUME}
-                    max={"1000000"} step={"1"}  minText={"$0"} maxText={"$5,000,000"} defaultValue={"0"}/>
+                    max={"1000000"} step={"1"}  minText={"$0"} maxText={"$1,000,000"} defaultValue={"0"}/>
             <Slider dataType={"price"} setttingsType={settingsActions.UPDATE_MIN_PRICE_INCREASE}
-                    max={"300"} step={"1"} minText={"0%"} maxText={"300%"} defaultValue={"0"}/>
+                    max={"50"} step={"1"} minText={"0%"} maxText={"50%"} defaultValue={"0"}/>
             <Slider dataType={"liquidity"} setttingsType={settingsActions.UPDATE_MIN_ORDER_SIZE}
                     max={"3000000"} step={"1"} minText={"$0"} maxText={"$3,000,000"} defaultValue={"0"}/>
         </React.Fragment>

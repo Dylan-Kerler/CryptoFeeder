@@ -3,14 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/precache-manifest.89dc15d4575b046080a4425b98529a96.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.7fcd55c8.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.7fcd55c8.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/precache-manifest.633f1cf01736bcb76f7aefc04334c4a8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/css/main.13814409.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/css/main.13814409.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/2.b061c42d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/2.b061c42d.chunk.js.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/2.b061c42d.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.84d4eaee.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.84d4eaee.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/runtime-main.c5064ed7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/runtime-main.c5064ed7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/DataDisplay/ParsedText.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/DataDisplay/ParsedText.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/Sliders.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/Sliders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +115,7 @@
       <workItem from="1578428776215" duration="7747000" />
       <workItem from="1578480654747" duration="15418000" />
       <workItem from="1578563698686" duration="6271000" />
-      <workItem from="1578681634838" duration="4996000" />
+      <workItem from="1578681634838" duration="6534000" />
     </task>
     <servers />
   </component>

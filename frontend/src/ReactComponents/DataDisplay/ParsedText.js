@@ -39,7 +39,7 @@ const ParsedText = ({anomaly, dataType}) => {
                 break;
 
             case "OrderBookIncrease":
-                if (anomaly.data.total >= settings.minOrderSize) {
+                if (anomaly.data.total * price >= settings.minOrderSize) {
                     element = <p className={`${dataType}_text`}>
                         ${Intl.NumberFormat().format((anomaly.data.total * price).toFixed(0))} {anomaly.data.isBuySide ? "buy " : "sell"} wall for {anomaly.coin + " "}
                         appeared {movingTimeString} on {anomaly.exchange} - A {((anomaly.data.total / anomaly.data.maTotal - 1) * 100).toFixed(2)}% increase
