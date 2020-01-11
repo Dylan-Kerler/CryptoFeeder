@@ -95,7 +95,8 @@ const calcSmallestTimeFrameToSatisfyLimitVolume = (series, coin, multiplier, isB
 
 const handleVolumeCandle = (candle, coin) => {
     const volume = parseFloat(candle.volume);
-    coinVolumes[coin].hourly200Cache.push(parseFloat(volume));
+    const price = parseFloat(candle.close);
+    coinVolumes[coin].hourly200Cache.push(volume * price);
     if (coinVolumes[coin].hourly200Cache.length > 200) {
         coinVolumes[coin].hourly200Cache.shift();
     }

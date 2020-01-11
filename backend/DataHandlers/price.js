@@ -22,6 +22,9 @@ const checkPriceSeconds = (coin, mostRecentTrade) => {
     const anomalyArray = [];
     const second = convertCacheToSecond(coinSecondCache[coin].secondCache);
     coinPrices[coin].seconds.push(second);
+    if (coinPrices[coin].seconds.length > 60 * 30) {
+        coinPrices[coin].seconds.shift();
+    }
 
     const maRange = coinPrices[coin].hourlyMa200;
     const anomalyRange = isAnomalyPriceRange(coinPrices[coin].seconds, maRange); // returns the range size
