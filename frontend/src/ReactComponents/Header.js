@@ -17,7 +17,7 @@ const Header = () => {
     const priceColour = isBuy ? "#26A83A" : "red";
     return (
         <React.Fragment>
-            <div id="title_text_div"> <h3>cryptofeeder.com</h3> </div>
+            <div id="title_text_div"> <h3>cryptopricefeeder.com <b style={{opacity: 0.3}}>- created by Dylan Kerler</b></h3> </div>
             <div id="login_signup_button_div">
                 <p style={{color: "white"}}>BTCUSDT: <b style={{color: priceColour}}>${btcPrice}</b></p>
             </div>
