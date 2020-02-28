@@ -8,7 +8,7 @@ import "./css/slider.css";
 import "./css/topBar.css";
 
 import Header from "./ReactComponents/Header";
-import TopBar from "./ReactComponents/TopBar";
+import TopBar from "./ReactComponents/TopBar/TopBar";
 import Sliders from "./ReactComponents/Sliders";
 import DataDisplay from "./ReactComponents/DataDisplay/DataDisplay";
 

@@ -1,0 +1,19 @@
+.button-default {
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+    padding: 15px 35px;
+    opacity: 100%;
+    transition: opacity 0.1s linear;
+}
+
+.button-default:hover {
+    animation: an-button-default-hover 10s linear forwards; 
+    opacity: 80%;
+    cursor: pointer;
+}

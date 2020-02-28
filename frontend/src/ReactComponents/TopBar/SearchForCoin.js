@@ -1,14 +1,6 @@
 import React, {useEffect, useState} from "react";
-import settingsStore, {settingsActions} from "./Store/Settings";
-import coins from "./config/coins";
-
-const TopBar = () => {
-    return (
-        <React.Fragment>
-            <SearchForCoin/>
-        </React.Fragment>
-    );
-};
+import settingsStore, {settingsActions} from "../Store/Settings";
+import coins from "../config/coins";
 
 const SearchForCoin = () => {
     const [searchValue, setSearchValue] = useState("");
@@ -104,4 +96,4 @@ const Prediction = props => {
     )
 };
 
-export default TopBar;
+export default SearchForCoin;

@@ -1,9 +1,8 @@
 #top_bar_div {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
     grid-template-areas:
-        "search     text    settings"
+        "search     settings    referrals"
     ;
 
     column-gap: 150px;
@@ -65,4 +64,11 @@
 
 .prediction_mouse_out {
     animation: mouse_out_prediction_animation 0.3s;
+}
+
+#referrals-box {
+    grid-area: referrals;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
 }

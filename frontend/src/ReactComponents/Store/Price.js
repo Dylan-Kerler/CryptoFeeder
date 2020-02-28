@@ -23,7 +23,7 @@ const initialState = {};
 
 const priceStore = createStore(priceReducer, initialState);
 socket.on("NEW_BTC_PRICE", price => {
-    console.log(price);
+    console.log("asd");
     priceStore.dispatch({
         type: priceActions.UPDATE_PRICE,
         data: {
