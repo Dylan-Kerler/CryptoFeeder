@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/precache-manifest.e1b1a7d5b04162630bcc9dc3ef7a6237.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.ad018a87.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/build/static/js/main.ad018a87.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/ReactComponents/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/ReactComponents/Header.js" afterDir="false" />
-    </list>
+    <list default="true" id="2a7c3d10-3830-4c5d-8484-c797b961cdcb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +100,7 @@
       <workItem from="1578563698686" duration="6271000" />
       <workItem from="1578681634838" duration="8550000" />
       <workItem from="1578748557334" duration="474000" />
+      <workItem from="1579094663465" duration="631000" />
     </task>
     <servers />
   </component>
